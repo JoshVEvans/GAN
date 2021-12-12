@@ -1,4 +1,1 @@
-[![alt text](mygeneratedvideo.mp4)]
-
-
-mygeneratedvideo.mp4
+![alt text](md_files/video.mov)

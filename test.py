@@ -5,7 +5,7 @@ from tqdm import tqdm
 # Video Generating function
 def generate_video():
     image_folder = "GAN_plots/"  # make sure to use your folder
-    video_name = "mygeneratedvideo.mp4"
+    video_name = "video.mov"
     # os.chdir("C:\\Python\\Geekfolder2")
 
     images = [
