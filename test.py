@@ -15,10 +15,11 @@ def generate_video():
     ]
 
     frames = []
-    for image in tqdm(images):
-        frame = cv2.imread(f"{image_folder}{image}")
-        frame = cv2.resize(frame, (500, 500), interpolation=cv2.INTER_LANCZOS4)
-        frames.append(frame)
+    for i, image in tqdm(enumerate(images)):
+        if i % 2 == 0:
+            frame = cv2.imread(f"{image_folder}{image}")
+            frame = cv2.resize(frame, (500, 500), interpolation=cv2.INTER_LANCZOS4)
+            frames.append(frame)
 
     fourcc = cv2.VideoWriter_fourcc("m", "p", "4", "v")
 
@@ -26,7 +27,7 @@ def generate_video():
     # the width, height of first image
     height, width, layers = frames[0].shape
 
-    video = cv2.VideoWriter(video_name, fourcc, 24, (width, height))
+    video = cv2.VideoWriter(video_name, fourcc, 12, (width, height))
 
     for frame in tqdm(frames):
         video.write(frame)
