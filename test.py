@@ -26,7 +26,7 @@ def generate_video():
     # the width, height of first image
     height, width, layers = frames[0].shape
 
-    video = cv2.VideoWriter(video_name, fourcc, 12, (width, height))
+    video = cv2.VideoWriter(video_name, fourcc, 24, (width, height))
 
     for frame in tqdm(frames):
         video.write(frame)
