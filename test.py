@@ -5,7 +5,7 @@ from tqdm import tqdm
 # Video Generating function
 def generate_video():
     image_folder = "GAN_plots/"  # make sure to use your folder
-    video_name = "video.mov"
+    video_name = "md_files/video.mp4"
     # os.chdir("C:\\Python\\Geekfolder2")
 
     images = [
@@ -16,7 +16,9 @@ def generate_video():
 
     frames = []
     for image in tqdm(images):
-        frames.append(cv2.imread(f"{image_folder}{image}"))
+        frame = cv2.imread(f"{image_folder}{image}")
+        frame = cv2.resize(frame, (500, 500), interpolation=cv2.INTER_LANCZOS4)
+        frames.append(frame)
 
     fourcc = cv2.VideoWriter_fourcc("m", "p", "4", "v")
 
