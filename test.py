@@ -16,7 +16,7 @@ def generate_video():
 
     frames = []
     for i, image in tqdm(enumerate(images)):
-        if i % 2 == 0:
+        if i % 10 == 0:
             frame = cv2.imread(f"{image_folder}{image}")
             frame = cv2.resize(frame, (500, 500), interpolation=cv2.INTER_LANCZOS4)
             frames.append(frame)
